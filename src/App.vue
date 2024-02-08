@@ -14,17 +14,16 @@ export default {
 		}
 	},
 	mounted() {
-		this.doThings();
-
-		// axios.get("indirizzo").then(risultato => {
-		// 	console.log(risultato);
-		// }).catch(errore => {
-		// 	console.error(errore);
-		// });
+		this.getEvents();
 	},
 	methods: {
-		doThings() {
-			console.log("App.vue does things");
+		getEvents() {
+			axios.get("http://localhost:8000/api/events").then(risultato => {
+				console.log(risultato.data.payload);
+				this.store.events = risultato.data;
+			}).catch(errore => {
+				console.error(errore);
+			});
 		}
 	}
 }

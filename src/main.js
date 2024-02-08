@@ -5,5 +5,5 @@ import * as bootstrap from 'bootstrap'
 
 window.vue = {}
 window.vue.App = createApp(App)
-  .component('font-awesome-icon', FontAwesomeIcon)
+  /*  .component('font-awesome-icon', FontAwesomeIcon) */
   .mount('#app')
