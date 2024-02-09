@@ -31,9 +31,10 @@ export default {
 
 <template>
 	<main>
-		<AppComponent />
 
-		<button class="btn btn-primary">Primary button</button>
+		<router-link :to="{ name: 'eventList' }" class="nav-link">Lista eventi</router-link>
+
+		<Router-view></Router-view>
 	</main>
 </template>
 
