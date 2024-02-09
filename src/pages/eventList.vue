@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios'; //importo Axios
+
 export default {
     name: 'eventList',
     data() {

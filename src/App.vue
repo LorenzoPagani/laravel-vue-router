@@ -1,12 +1,13 @@
 <script>
-import AppComponent from "./components/AppComponent.vue"
-
+import appHome from "./pages/appHome.vue"
+import appHeader from "./pages/appHeader.vue"
 import axios from 'axios'; //importo Axios
 import { store } from "./store.js" //state management
 
 export default {
 	components: {
-		AppComponent
+		appHome,
+		appHeader
 	},
 	data() {
 		return {
@@ -32,9 +33,8 @@ export default {
 <template>
 	<main>
 
-		<router-link :to="{ name: 'eventList' }" class="nav-link">Lista eventi</router-link>
-
-		<Router-view></Router-view>
+		<appHeader></appHeader>
+		<router-view></router-view>
 	</main>
 </template>
 
