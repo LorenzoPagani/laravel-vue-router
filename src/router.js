@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import eventList from './pages/eventList.vue'
 import appHome from './pages/appHome.vue'
+import singleEvent from './pages/singleEvent.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -13,6 +14,11 @@ const router = createRouter({
       path: '/eventi',
       name: 'eventi',
       component: eventList
+    },
+    {
+      path: '/eventi/:id',
+      name: 'single-event',
+      component: singleEvent
     }
   ]
 })

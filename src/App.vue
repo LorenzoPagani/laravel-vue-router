@@ -21,7 +21,7 @@ export default {
 		getEvents() {
 			axios.get("http://localhost:8000/api/events").then(risultato => {
 				console.log(risultato.data.payload);
-				this.store.events = risultato.data;
+				this.store.events = risultato.data.payload;
 			}).catch(errore => {
 				console.error(errore);
 			});

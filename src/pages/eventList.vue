@@ -1,33 +1,32 @@
 <script>
-import axios from 'axios'; //importo Axios
+import { RouterLink } from 'vue-router';
+import { store } from "../store.js" //state management
 
 export default {
     name: 'eventList',
     data() {
         return {
-            events: []
-        }
+            store
+        };
     },
     mounted() {
-        this.getEvents();
+
     },
     methods: {
-        getEvents() {
-            axios.get("http://localhost:8000/api/events").then(risultato => {
-                console.log(risultato.data.payload);
-                this.events = risultato.data;
-            }).catch(errore => {
-                console.error(errore);
-            });
-        }
-    }
+
+    },
+    components: { RouterLink }
 }
 </script>
 <template>
     <h1>ecco gli eventi</h1>
+
     <ul>
-        <li v-for="event in events" :key="event.id">
-            {{ event.name }}
+        <li v-for="event in store.events" :key="event.id">
+            <router-link :to="{ name: 'single-event', params: { id: event.id } }" class="btn btn-primary">
+
+                {{ event.name }}
+            </router-link>
         </li>
     </ul>
 </template>
