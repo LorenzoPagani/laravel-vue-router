@@ -17,12 +17,14 @@ export default {
     mounted() {
         this.event = this.store.events.find(item => item.id == this.$route.params.id);
         register(this); //per debuggare il componente da console
-        console.log("evento: ", this.store.events.find(item => item.id == this.$route.params.id))
-        console.log("eventolocale: ", this.event.name)
+        console.log(this.store.tags)
     }
 }
 </script>
 <template>
-    <h2 v-if="event != null">{{ event.name }}</h2>
+    <div v-if="event != null">
+        <h2>{{ event.name }}</h2>
+        <p v-for="tag in event.tags">{{ tag.name }}</p>
+    </div>
 </template>
 <style scoped lang="scss"></style>
